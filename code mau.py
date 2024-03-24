@@ -12,7 +12,7 @@ BLYNK_AUTH = "JVRGgvJuGe4k7jKt7jT2mzfF9aWhHoyk"
 blynk = BlynkLib.Blynk(BLYNK_AUTH)
 
 led = Pin(2, Pin.OUT)
-btn = Pin(0, Pin.IN, Pin.PULL_UP)
+btn = Pin(0, Pin.IN)
 @blynk.on("V0") #nhận dữ liệu từ pin V0
 def v0_read_handler(value): #read the value
 	if int(value[0]) == 1:
