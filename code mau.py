@@ -3,6 +3,7 @@ import network
 from machine import Pin
 import BlynkLib
 from time import sleep
+from BlynkTimer import BlynkTimer
 
 from connectWifi import connectTo
 connectTo("free", "12345678") #chỗ này điền tên wifi và mật khẩu
@@ -12,7 +13,8 @@ BLYNK_AUTH = "JVRGgvJuGe4k7jKt7jT2mzfF9aWhHoyk"
 blynk = BlynkLib.Blynk(BLYNK_AUTH)
 
 led = Pin(2, Pin.OUT)
-btn = Pin(0, Pin.IN)
+btn = Pin(0, Pin.IN) 
+btn1 = Pin(4, Pin.IN, Pin.PULL_UP)
 @blynk.on("V0") #nhận dữ liệu từ pin V0
 def v0_read_handler(value): #read the value
 	if int(value[0]) == 1:
